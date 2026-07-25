@@ -1,38 +1,39 @@
 #include <stdio.h>
+int main()
+{
+    int n;
+    int low, high, mid;
+    int e;
+    printf("Enter the number of elements: ");
+    scanf("%d", &n);
+    int a[n];
+    printf("Enter the array elements (sorted): ");
+    for(int i = 0; i < n; i++)
+    {
+        scanf("%d", &a[i]);
+    }
 
-int main() {
-    int N;
-    printf("Enter the number of sectors: ");
-    scanf("%d", &N);
-    int arr[N];
-    printf("Enter %d binary values (0 or 1): ", N);
-    for (int i = 0; i < N; i++) {
-        scanf("%d", &arr[i]);
+    printf("Enter the element to be searched: ");
+    scanf("%d", &e);
+    low = 0;
+    high = n - 1;
+    while(low <= high)
+    {
+        mid = (low + high) / 2;
+        if(e == a[mid])
+        {
+            printf("Element Found at index %d", mid);
+            return 0;
+        }
+        else if(e < a[mid])
+        {
+            high = mid - 1;
+        }
+        else
+        {
+            low = mid + 1;
+        }
     }
-    int countOnes = 0;
-    for (int i = 0; i < N; i++) {
-        if (arr[i] == 1)
-            countOnes++;
-    }
-    if (countOnes <= 1) {
-        printf("Min Swaps: 0");
-        return 0;
-    }
-    int currentOnes = 0;
-    for (int i = 0; i < countOnes; i++) {
-        if (arr[i] == 1)
-            currentOnes++;
-    }
-    int maxOnes = currentOnes;
-    for (int i = countOnes; i < N; i++) {
-        if (arr[i] == 1)
-            currentOnes++;
-        if (arr[i - countOnes] == 1)
-            currentOnes--;
-        if (currentOnes > maxOnes)
-            maxOnes = currentOnes;
-    }
-    int minSwaps = countOnes - maxOnes;
-    printf("Min Swaps: %d", minSwaps);
+    printf("Element not found");
     return 0;
 }
