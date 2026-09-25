@@ -1,6 +1,6 @@
 //Practice at Home 1
-//This program inserts all product prices into an AVL tree while keeping it balanced. Then it counts how many prices are strictly greater than the
-//given value x
+//This program inserts elements into an AVL tree, prints its preorder traversal, deletes a specified element while maintaining AVL balance, and prints the
+//updated preorder traversal.
 #include <stdio.h>
 #include <stdlib.h>
 struct Node {
