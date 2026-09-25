@@ -1,4 +1,6 @@
 //Class Exercise 1
+//This program creates a balanced AVL tree while removing duplicate values and counts how many duplicates were entered. It then deletes specified elements 
+//from the AVL tree, rebalances it, and displays the tree in sorted (inorder) order.
 // You are using GCC
 #include <stdio.h>
 #include <stdlib.h>
