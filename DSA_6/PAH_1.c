@@ -1,4 +1,6 @@
 //Practice at Home 1
+//This program inserts all product prices into an AVL tree while keeping it balanced. Then it counts how many prices are strictly greater than the
+//given value x
 #include <stdio.h>
 #include <stdlib.h>
 struct Node {
